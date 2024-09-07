@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Arial";
+    gap: 16px;
+    background-image: url("tricodando.png");
+}
+
+.card {
+    background-color: #fff;
+    width: 300px; /* Tamanho ajustado para fotos de guitarra */
+    height: 400px; /* Tamanho ajustado para fotos de guitarra */
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px #aaaa;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    height: 60%; /* Ajustado para ocupar 60% do card */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Aumentado o espaço entre os elementos */
+    height: 40%; /* Ajustado para ocupar o restante do card */
+    padding: 16px; /* Adicionado padding para o conteúdo */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura */
+}
+
+.card h1 {
+    font-size: 1.4rem; /* Aumentado o tamanho do texto para melhor visibilidade */
+}
+
+.card h2 {
+    font-size: 1.1rem; /* Aumentado o tamanho do texto para melhor visibilidade */
+    color: #aaaa;
+}
+
+.card button {
+    background-color: #000; /* Botão preto */
+    height: 40px; /* Ajustado para um tamanho mais adequado */
+    border: none;
+    padding: 8px;
+    width: 90%; /* Ajustado para ocupar uma largura maior */
+    color: #fff; /* Texto branco */
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 16px; /* Espaço acima do botão */
+}
+
+.card button:hover {
+    background-color: #333; /* Cor um pouco mais clara no hover */
+    cursor: pointer;
+}
