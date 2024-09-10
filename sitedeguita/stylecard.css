@@ -1,101 +1,70 @@
-/* Reset básico */
-body, h1, h2, p, span, button {
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4; /* Cor de fundo clara para o corpo */
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 1rem;
-}
-
-main {
-    padding: 1rem;
-}
-
-h2 {
-    margin-bottom: 1rem;
-}
-
-.product-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Arial";
+    gap: 16px;
+    background-image: url("tricodando.png");
 }
 
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 300px; /* Ajuste conforme necessário */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: scale(1.05);
+    background-color: #fff;
+    width: 300px; /* Tamanho ajustado para fotos de guitarra */
+    height: 400px; /* Tamanho ajustado para fotos de guitarra */
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px #aaaa;
+    display: flex;
+    flex-direction: column;
 }
 
 .card img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 60%; /* Ajustado para ocupar 60% do card */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
-.card-details {
-    padding: 1rem;
+.card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Aumentado o espaço entre os elementos */
+    height: 40%; /* Ajustado para ocupar o restante do card */
+    padding: 16px; /* Adicionado padding para o conteúdo */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura */
 }
 
-.card-details h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.card h1 {
+    font-size: 1.4rem; /* Aumentado o tamanho do texto para melhor visibilidade */
 }
 
-.card-details h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+.card h2 {
+    font-size: 1.1rem; /* Aumentado o tamanho do texto para melhor visibilidade */
+    color: #aaaa;
 }
 
-.card-details span {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-.card-details button {
-    background: #333;
-    color: #fff;
+.card button {
+    background-color: #000; /* Botão preto */
+    height: 40px; /* Ajustado para um tamanho mais adequado */
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding: 8px;
+    width: 90%; /* Ajustado para ocupar uma largura maior */
+    color: #fff; /* Texto branco */
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 16px; /* Espaço acima do botão */
+}
+
+.card button:hover {
+    background-color: #333; /* Cor um pouco mais clara no hover */
     cursor: pointer;
-}
-
-.card-details button:hover {
-    background: #555;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
 }
