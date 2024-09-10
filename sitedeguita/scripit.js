@@ -17,7 +17,7 @@ function displayProducts() {
         productElement.classList.add('product');
         
         productElement.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" width="200" height="150">
+            <img src="${product.image}" alt="${product.name}" class="product-image">
             <h3>${product.name}</h3>
             <p>${product.price}</p>
             <a href="${product.link}">Ver mais</a>
@@ -25,11 +25,38 @@ function displayProducts() {
         
         productContainer.appendChild(productElement);
     });
+
+    // Ajusta o tamanho das imagens após adicionar os produtos
+    resizeImages('.product-list .product-image', 200, 150);
 }
 
-// Adiciona um listener para carregar os produtos e gerenciar o vídeo quando o DOM estiver completamente carregado
+// Função para ajustar o tamanho das imagens
+function resizeImages(selector, width, height) {
+    const images = document.querySelectorAll(selector);
+
+    images.forEach(image => {
+        image.style.width = `${width}px`;
+        image.style.height = `${height}px`;
+        image.style.objectFit = 'cover'; // Ajusta a imagem para cobrir o contêiner sem distorcer
+    });
+}
+
+// Adiciona um listener para carregar os produtos quando o DOM estiver completamente carregado
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
 });
 
-let slideIndex = 0;
+// Funções para o carrossel de imagens
+let currentIndex = 0;
+
+function moveSlide(step) {
+    const slides = document.querySelectorAll('.carousel-images img');
+    const totalSlides = slides.length;
+    currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+}
+
+// Adiciona listeners para as setas do carrossel
+document.querySelector('.carousel-prev').addEventListener('click', () => moveSlide(-1));
+document.querySelector('.carousel-next').addEventListener('click', () => moveSlide(1));
